@@ -15,6 +15,17 @@ class Jasm(private val args: ToolArgs) : Runnable {
                 .addObject(args)
                 .build()
 
+            try {
+                jcl.parse(*argv)
+
+                if (args.showHelp) {
+                    jcl.usage()
+                } else {
+                    Jasm(args).run()
+                }
+            } catch (e: ParameterException) {
+                System.err.println("\u001B[1;31mERROR:\u001B[0m " + e.message)
+            }
         }
     }
 

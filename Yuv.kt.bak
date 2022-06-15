@@ -160,6 +160,8 @@ class YuvByteBuffer(image: Image, dstBuffer: ByteBuffer? = null) {
     private class ImageWrapper(image:Image) {
         val width= image.width
         val height = image.height
+		val width= image.width
+        val height = image.height
         val y = PlaneWrapper(width, height, image.planes[0])
         val u = PlaneWrapper(width / 2, height / 2, image.planes[1])
         val v = PlaneWrapper(width / 2, height / 2, image.planes[2])

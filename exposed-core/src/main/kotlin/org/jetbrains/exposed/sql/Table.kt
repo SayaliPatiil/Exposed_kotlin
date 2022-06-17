@@ -420,14 +420,7 @@ open class Table(name: String = "") : ColumnSet(), DdlAware {
         val columns: Array<Column<*>>,
         /** Returns the name of the primary key. */
         val name: String = "pk_$tableName"
-    ) {
-        constructor(firstColumn: Column<*>, vararg columns: Column<*>, name: String = "pk_$tableName") :
-            this(arrayOf(firstColumn, *columns), name)
-
-        init {
-            columns.sortWith(compareBy { !it.columnType.isAutoInc })
-        }
-    }
+    ) 
 
     /**
      * Returns the primary key of the table if present, `null` otherwise.

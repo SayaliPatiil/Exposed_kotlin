@@ -34,7 +34,7 @@ class Jasm(private val args: ToolArgs) : Runnable {
                         failed.map { "${it.unitName} : ${it.message}" }.joinToString(separator = "$EOL$EOL")
                     }"
                 )
-                exitProcess(1)
+                
             }
         }
     }
